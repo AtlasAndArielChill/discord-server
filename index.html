@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas and Ariel Chill</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #23272a;
+            color: #ffffff;
+        }
+        header {
+            background-color: #7289da;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #2c2f33;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 1.1em;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover, nav a.active {
+            background-color: #7289da;
+            color: #ffffff;
+            border-radius: 8px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #40444b;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        .roles h2, .events h2 {
+            color: #ffcc4d;
+            margin-bottom: 10px;
+        }
+        .events ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .events li {
+            background-color: #2c2f33;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 0.9em;
+            background-color: #2c2f33;
+        }
+        footer a {
+            color: #7289da;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function switchTab(tabId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector(`nav a[href="#${tabId}"]`).classList.add('active');
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            switchTab('home');
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Atlas and Ariel Chill</h1>
+        <p>The official website for our Discord group!</p>
+    </header>
+    <nav>
+        <a href="#home" onclick="switchTab('home')">Home</a>
+        <a href="#roles" onclick="switchTab('roles')">Roles</a>
+        <a href="#events" onclick="switchTab('events')">Events</a>
+        <a href="#about" onclick="switchTab('about')">About Us</a>
+        <a href="#contact" onclick="switchTab('contact')">Contact</a>
+    </nav>
+    <div class="container">
+        <section id="home" class="section active">
+            <h2>Welcome to Atlas and Ariel Chill</h2>
+            <p>Join our vibrant community and enjoy engaging conversations, fun events, and great company!</p>
+        </section>
+        <section id="roles" class="section">
+            <h2>Our Roles</h2>
+            <div class="roles">
+                <h3>Owner</h3>
+                <ul>
+                    <li>Squiral</li>
+                </ul>
+                <h3>Moderators</h3>
+                <ul>
+                    <li>Fredrayxd</li>
+                    <li>Cirrus</li>
+                    <li>OhElliz</li>
+                </ul>
+                <h3>Normals</h3>
+                <ul>
+                    <li>numb_116</li>
+                    <li>IceCream</li>
+                    <li>Betterthanyouall!!!!</li>
+                    <li>DemonHunter_0072</li>
+                </ul>
+            </div>
+        </section>
+        <section id="events" class="section">
+            <h2>Events Timeline</h2>
+            <div class="events">
+                <ul>
+                    <li><strong>Group Created:</strong> Atlas and Ariel Chill was formed!</li>
+                    <li><strong>Fredrayxd Became a Mod:</strong> The first moderator joined the team.</li>
+                    <li><strong>Cirrus Became a Mod:</strong> Cirrus stepped up to help moderate the group.</li>
+                    <li><strong>OhElliz Became a Mod:</strong> The moderator team grew stronger with OhElliz!</li>
+                </ul>
+            </div>
+        </section>
+        <section id="about" class="section">
+            <h2>About Us</h2>
+            <p>Atlas and Ariel Chill is a Discord group where members gather to have fun, relax, and connect. Whether you're here for gaming, chatting, or just hanging out, there's a place for you in our community.</p>
+        </section>
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>If you're interested in becoming a moderator, please DM <strong>Squiral</strong> on Discord. For any other queries, feel free to reach out to any of our moderators.</p>
+        </section>
+    </div>
+    <footer>
+        <p>Created for the Discord group "Atlas and Ariel Chill".</p>
+        <p>Follow us for updates and join our group for more fun!</p>
+    </footer>
+</body>
+</html>
